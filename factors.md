@@ -9,7 +9,7 @@ Backing Services: Repository Layer erstellt und mit Spring JPA und PostgreSQL Da
 Build, Release and Run: 
 
 Processes: Prozess sind unabhängig voneinander und jeder Prozess hat seine eigene Backing Services. (Ist in diesem 
-microservice gegeben ohne speziell etwas zu implementieren da keine informationen zu sessions gespeichert werden)
+microservice gegeben, ohne speziell etwas implementieren zu müssen da keine informationen zu sessions gespeichert werden)
 
 Port Binding: Mit SpringBoot automatisch gegeben. Applikation besitzt Endpoints die über den default Port 8080 laufen.
 
@@ -25,11 +25,11 @@ können. Ist in unserem Fall gegeben da Get/Delete sowieso idempotent sind und P
 Schnell starten mit Regel5 Build Release and Run zusammenhängend denn wenn zuerst Builded Released und Runned jedes mal
 gemacht werden muss dauert es viel länger.
 
-Dev/Prod Parity: Dev environment und production sollen so gleich wie möglich sein. Mit containerisieren mit Docker und 
-verwendung von CI/CD möglich.
+Dev/Prod Parity: Dev environment und production sollen so gleich wie möglich sein. Um zu erreichen: Containerisieren 
+mit Docker und verwendung von CI/CD.
 
 Logs: Logging um Verhalten des laufenden Prozesses sichtbar zu machen. Zusätzlich können/sollten logs noch gespeichert 
-werden. Zb mit Fluentd
+werden zB mit Fluentd
 
-Admin Processes: Skripte die einmal aufgerufen werden und direkt wieder beendet werden. Gehören auch zur Codebase.
-In unserem Fall ein skript was eine Liste von Movies ausliest und in die Datenbank speichert mithilfe von Groovy.
+Admin Processes: Skripte, die einmal aufgerufen werden und direkt wieder beendet werden. Gehören auch zur Codebase.
+In unserem Fall ein "skript" bzw eine Klasse, die eine Liste von Movies ausliest und in die Datenbank speichert.
