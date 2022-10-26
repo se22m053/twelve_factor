@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  app:
+    container_name: twelve-factor-container
+    image: twelve-factor-image
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://postgres:5432/movie
+      DATABASE_USER: postgrespw
+      DATABASE_PASSWORD: postgres
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=movie

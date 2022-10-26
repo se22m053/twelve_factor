@@ -8,16 +8,28 @@ Backing Services: Repository Layer erstellt und mit Spring JPA und PostgreSQL Da
 
 Build, Release and Run: 
 
-Processes:
+Processes: Prozess sind unabhängig voneinander und jeder Prozess hat seine eigene Backing Services. (Ist in diesem 
+microservice gegeben ohne speziell etwas zu implementieren da keine informationen zu sessions gespeichert werden)
 
-Port Binding:
+Port Binding: Mit SpringBoot automatisch gegeben. Applikation besitzt Endpoints die über den default Port 8080 laufen.
 
-Concurrency:
+Concurrency: Mehrere Instanzen eines Microservice/Prozesses sollen laufen können mit intelligenter load distribution. 
+Schließt aber auch nicht aus die interne "prozessbehandlung" mithilfe von Threads.
+Mehrere Instanzen laufen lassen könnte mit Kubernetes umgesetzt werden. Innerhalb einer Instanz mittels Threads 
+concurrency implementieren.
 
-Disposability:
+Disposability: Prozesse sollen gestoppt werden können ohne das irgendwelche unerwünschte side-effects auftreten 
+(Grundsätzlich idempotent sein) und entsprechend auch so designed sein dass die prozesse wieder schnell gestartet werden
+können. Ist in unserem Fall gegeben da Get/Delete sowieso idempotent sind und Post so implementiert wurde, dass wenn
+2 mal ein request mit dem selben Objekt gesendet wird nur 1 mal gespeichert wird.
+Schnell starten mit Regel5 Build Release and Run zusammenhängend denn wenn zuerst Builded Released und Runned jedes mal
+gemacht werden muss dauert es viel länger.
 
-Dev/Prod Parity:
+Dev/Prod Parity: Dev environment und production sollen so gleich wie möglich sein. Mit containerisieren mit Docker und 
+verwendung von CI/CD möglich.
 
-Logs:
+Logs: Logging um Verhalten des laufenden Prozesses sichtbar zu machen. Zusätzlich können/sollten logs noch gespeichert 
+werden. Zb mit Fluentd
 
-Admin Processes:
+Admin Processes: Skripte die einmal aufgerufen werden und direkt wieder beendet werden. Gehören auch zur Codebase.
+In unserem Fall ein skript was eine Liste von Movies ausliest und in die Datenbank speichert mithilfe von Groovy.
