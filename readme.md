@@ -1,4 +1,7 @@
-"docker-compose up" ausführen
+Auf https://github.com/se22m053/twelve_factor projekt .zip downloaden
+Projekt entzippen
+
+"docker-compose up" Befehl ausführen
 
 Auf http://localhost:8080/movies gehen, um alle movies zu erhalten.
 
