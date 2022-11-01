@@ -1,4 +1,4 @@
-Codebase: Version Control System Gitlab verwendet.
+Codebase: Version Control System GitHub verwendet.
 
 Dependencies: Dependency Management Tool Maven verwendet. Alle dependencies sind in pom.xml
 
@@ -6,7 +6,7 @@ Configurations: Konfiguration ist in einem file in src/main/resources/applicatio
 
 Backing Services: Repository Layer erstellt und mit Spring JPA und PostgreSQL Datenbank aufgesetzt
 
-Build, Release and Run: CI Pipeline Gitlab
+Build, Release and Run: CI Pipeline GitHub
 
 Processes: Prozess sind unabhängig voneinander und jeder Prozess hat seine eigene Backing Services. (Ist in diesem 
 microservice gegeben, ohne speziell etwas implementieren zu müssen da keine informationen zu sessions gespeichert werden)
@@ -28,8 +28,7 @@ gemacht werden muss dauert es viel länger.
 Dev/Prod Parity: Dev environment und production sollen so gleich wie möglich sein. Um zu erreichen: Containerisieren 
 mit Docker und verwendung von CI/CD.
 
-Logs: Logging um Verhalten des laufenden Prozesses sichtbar zu machen. Zusätzlich können/sollten logs noch gespeichert 
-werden zB mit Fluentd
+Logs: Logging um Verhalten des laufenden Prozesses sichtbar zu machen. Mit java LOGGER umgesetzt.
 
 Admin Processes: Skripte, die einmal aufgerufen werden und direkt wieder beendet werden. Gehören auch zur Codebase.
 In unserem Fall ein "skript" bzw eine Klasse, die eine Liste von Movies ausliest und in die Datenbank speichert.
