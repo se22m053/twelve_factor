@@ -1,4 +1,4 @@
-Auf https://github.com/se22m053/twelve_factor projekt .zip downloaden
+Auf https://github.com/se22m053/twelve_factor projekt .zip downloaden ODER in Abgabe projekt .zip downloaden
 Projekt entzippen
 
 "docker-compose up" Befehl ausführen
