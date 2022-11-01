@@ -6,7 +6,7 @@ Configurations: Konfiguration ist in einem file in src/main/resources/applicatio
 
 Backing Services: Repository Layer erstellt und mit Spring JPA und PostgreSQL Datenbank aufgesetzt
 
-Build, Release and Run: 
+Build, Release and Run: CI Pipeline Gitlab
 
 Processes: Prozess sind unabhängig voneinander und jeder Prozess hat seine eigene Backing Services. (Ist in diesem 
 microservice gegeben, ohne speziell etwas implementieren zu müssen da keine informationen zu sessions gespeichert werden)

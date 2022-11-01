@@ -8,12 +8,12 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - postgresqldb
     environment:
       DATABASE_URL: postgresql://postgres:5432/movie
       DATABASE_USER: postgrespw
       DATABASE_PASSWORD: postgres
-  postgres:
+  postgresqldb:
     image: postgres
     ports:
       - "5432:5432"
